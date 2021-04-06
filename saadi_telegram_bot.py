@@ -17,7 +17,7 @@ def hello(update, context):
 
 
 def send_poem(num, update, context):
-    poem = poem_back.Poem.load_poem_pickle("D:/programming/ganjoor/saadi/divan/ghazals/{}.pm".format(num))
+    poem = poem_back.Poem.load_poem_pickle("./saadi/divan/ghazals/{}.pm".format(num))
     txt = "غزل شماره " + str(num)
     print(txt)
     context.bot.send_message(chat_id=update.effective_chat.id, text=txt)
@@ -61,7 +61,7 @@ def search_result(update, context):
                 context.bot.send_message(chat_id=update.effective_chat.id, text="ببین میخوای اذیت کنی ها!!\nسعدی بیچاره در تمام عمر مفید خودش فقط 637 تا غزل گفته بین 1 تا 637 یه عدد وارد کن")
                 return 123
         else:
-            res = poem_back.Poem.search_all("D:/programming/ganjoor/saadi/divan/ghazals", target_word)
+            res = poem_back.Poem.search_all("./saadi/divan/ghazals", target_word)
             num = len(res)
             txt1 = "تعداد ابیات پیدا شده: " + str(num)
             if num > 40:
