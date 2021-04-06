@@ -65,7 +65,7 @@ class Poem:
         print("searching...")
         search_result_beyts = []
         for file_name in listdir(directory):
-            po_dic = Poem.load_poem_pickle(directory + "\\" + file_name)
+            po_dic = Poem.load_poem_pickle(directory + "/" + file_name)
             beyts = po_dic['all_beyts']
             for beyt in beyts:
                 for mes in beyt.mesras:
@@ -74,7 +74,7 @@ class Poem:
                         search_result_beyts.append(item)
                         break
         print("search is finished")
-        print("total reasults:", len(search_result_beyts))
+        print("total results:", len(search_result_beyts))
         return search_result_beyts
 
     def load_poems_from_ganjoor(self):
@@ -125,7 +125,7 @@ class Poem:
         return all_beyts
 
     def save_poem_pickle(self):
-        directory = self.poet.directory + "\\{}\\".format(self.kind.name)
+        directory = self.poet.directory + "/{}/".format(self.kind.name)
         file_address = directory + self.name + ".pm"
         # print("file address:", file_address)
         poem_dict = self.__dict__

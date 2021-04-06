@@ -20,7 +20,7 @@ def hello(update, context):
 
 
 def send_poem(num, update, context):
-    poem = poem_back.Poem.load_poem_pickle("D:\\programming\\ganjoor\\saeb\\divan-saeb\\ghazalkasa\\{}.pm".format(num))
+    poem = poem_back.Poem.load_poem_pickle("D:/programming/ganjoor/saeb/divan-saeb/ghazalkasa/{}.pm".format(num))
     txt = "غزل شماره " + str(num)
     print(txt)
     context.bot.send_message(chat_id=update.effective_chat.id, text=txt)
@@ -31,13 +31,13 @@ def send_poem(num, update, context):
 
 
 def random_poem(update, context):
-    random_num = random.randint(1, 637)
+    random_num = random.randint(1, 6995)
     send_poem(random_num, update, context)
 
 
 def inner_search(target_word):
     global res
-    res = poem_back.Poem.search_all("D:\\programming\\ganjoor\\saeb\\divan-saeb\\ghazalkasa", target_word)
+    res = poem_back.Poem.search_all("D:/programming/ganjoor/saeb/divan-saeb/ghazalkasa", target_word)
 
 
 def search_result(update, context):

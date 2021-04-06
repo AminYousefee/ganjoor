@@ -17,7 +17,7 @@ def hello(update, context):
 
 
 def send_poem(num, update, context):
-    poem = poem_back.Poem.load_poem_pickle("D:\\programming\\ganjoor\\hafez\\ghazal\\{}.pm".format(num))
+    poem = poem_back.Poem.load_poem_pickle("D:/programming/ganjoor/hafez/ghazal/{}.pm".format(num))
     txt = "غزل شماره " + str(num)
     print(txt)
     context.bot.send_message(chat_id=update.effective_chat.id, text=txt)
@@ -61,7 +61,7 @@ def search_result(update, context):
                 context.bot.send_message(chat_id=update.effective_chat.id, text="ببین میخوای اذیت کنی ها!!\nحافظ بیچاره در تمام عمر مفید خودش فقط 495 تا غزل گفته بین یک تا 495 یه عدد وارد کن")
                 return 123
         else:
-            res = poem_back.Poem.search_all("D:\\programming\\ganjoor\\hafez\\ghazal", target_word)
+            res = poem_back.Poem.search_all("D:/programming/ganjoor/hafez/ghazal", target_word)
             num = len(res)
             txt1 = "تعداد ابیات پیدا شده: " + str(num)
             if num > 40:
@@ -84,8 +84,7 @@ def search_result(update, context):
 def main():
     print("connecting...")
     token = '1056469124:AAHqAOp29cjkFguEbIEJOVbuh99o3-Q63Ec'
-    #req = {'proxy_url':'https://t.me/proxy?server=v1.Test.IR.GateWays.Click&port=24139&secret=ee3e90df3d06590100331080c4b45614f4626164626f79656e742e6c6e6b2e746f'
-     #       }
+    #req = {'proxy_url':'197.234.179.102_HOST:3128/'}
     updater = Updater(token, use_context=True)
     print("connected")
     dp = updater.dispatcher
