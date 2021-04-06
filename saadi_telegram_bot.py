@@ -19,11 +19,11 @@ def hello(update, context):
 def send_poem(num, update, context):
     poem = poem_back.Poem.load_poem_pickle("./saadi/divan/ghazals/{}.pm".format(num))
     txt = "غزل شماره " + str(num)
-    print(txt)
+    #print(txt)
     context.bot.send_message(chat_id=update.effective_chat.id, text=txt)
     for beyt in poem["all_beyts"]:
         beyt_txt = beyt.print_b(sep="\n")
-        print(beyt_txt)
+        #print(beyt_txt)
         context.bot.send_message(chat_id=update.effective_chat.id, text=beyt_txt)
 
 
@@ -36,7 +36,7 @@ def search_result(update, context):
     target_word = update.message.text
     num_ref = "0123456789۰۱۲۳۴۵۶۷۸۹"
     ref_en = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    print(target_word)
+    #print(target_word)
     alisnum = True
     num_count = 0
     for char in target_word:
@@ -78,7 +78,7 @@ def search_result(update, context):
                 beyt = item[0]
                 poem_num = item[1]
                 beyt_txt = beyt.print_b(sep="\n")
-                print(beyt_txt)
+                #print(beyt_txt)
                 context.bot.send_message(chat_id=update.effective_chat.id, text=beyt_txt + "\n" + "غزل شماره {}".format(poem_num))
 
 
