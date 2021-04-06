@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+/cry.mp3
+/finish.mp3
+/notif2.mp3
+/ringtone.mp3
