@@ -83,7 +83,7 @@ def search_result(update, context):
 
 def main():
     print("connecting...")
-    token = '1056469124:AAHqAOp29cjkFguEbIEJOVbuh99o3-Q63Ec'
+    token = ''
     #req = {'proxy_url':'197.234.179.102_HOST:3128/'}
     updater = Updater(token, use_context=True)
     print("connected")
